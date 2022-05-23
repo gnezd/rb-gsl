@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = 'Ruby/GSL is a Ruby interface to the GNU Scientific Library, for numerical computing with Ruby'
   s.email = 'mail@daniel-mendler.de'
   s.extensions  = Dir['ext/**/extconf.rb']
-  s.extra_rdoc_files = Dir['**/*.rdoc']
+  s.extra_rdoc_files = Dir['rdoc/*.rdoc']
   s.files = `git ls-files`.split("\n")
   s.homepage = 'http://github.com/SciRuby/rb-gsl'
   s.licenses = ['GPL-2.0']
@@ -32,5 +32,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake-compiler', '>= 0'
   s.add_development_dependency 'rake', '>= 0'
   s.add_development_dependency 'test-unit', '>= 0'
-  s.add_development_dependency 'bundler', '~> 1.11'
+  s.add_development_dependency 'bundler', '>= 1.11'
 end
