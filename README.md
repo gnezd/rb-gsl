@@ -1,3 +1,5 @@
+A personal clone. Please always check the [SciRuby repo](https://github.com/SciRuby/rb-gsl).
+
 # Ruby/GSL, a Ruby interface to GSL (GNU Scientific library)
 
 Permission is granted to copy, distribute and/or modify this document under
@@ -57,6 +59,8 @@ For using rb-gsl with NArray:
 
 Note that setting both `NMATRIX` and `NARRAY` variables will lead to undefined behaviour. Only one can be used at a time.
 
+Note by YCD: when nmatrix coexisted with narray, even setting just $NMATRIX to 1 will cause compilation to fail when including nmatrix.h, resulting in `have_header('nmatrix.h')` being `false`. As suggested by [this issue](https://github.com/SciRuby/nmatrix/issues/538), setting `#define HAVE_RB_ARRAY_CONST_PTR` right before the `#ifdef` can avoid the problem and compile in the NMatrix interface.  
+
 ### NMatrix basic usage
 
 Convert an NMatrix 1D vector to GSL::Vector:
@@ -100,9 +104,9 @@ For a detailed list of methods that are compatible with NMatrix, see 'nmatrix' i
 
 ## Reference
 
-The [Ruby/GSL reference manual](link:rdoc/ref_rdoc.html) follows and borrows
-large parts of the GSL reference manual.
+~~The [Ruby/GSL reference manual](rdoc/ref_rdoc.html) follows and borrows large parts of the GSL reference manual.~~
 
+A mirror of the reference can be found [here](https://gnezd.idv.tw/rb-gsl-doc/ref_rdoc.html)
 
 ## Examples
 
