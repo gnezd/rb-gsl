@@ -482,6 +482,7 @@ void Init_gsl_array(VALUE module)
   cgsl_block_complex = rb_define_class_under(cgsl_block, "Complex", cgsl_block);
   cgsl_vector = rb_define_class_under(module, "Vector",
                                       cGSL_Object);
+  rb_undef_alloc_func(cgsl_vector); // YCD Fix
   cgsl_vector_col = rb_define_class_under(cgsl_vector, "Col",
                                           cgsl_vector);
   cgsl_vector_complex = rb_define_class_under(cgsl_vector, "Complex",

@@ -73,6 +73,9 @@ static void Init_gsl_dirac_common(VALUE module)
 
   cgsl_matrix_complex_const = rb_define_class_under(module, "Const",
                                                     cgsl_matrix_complex);
+  // YCD fix
+  rb_undef_alloc_func(cgsl_matrix_complex_const);
+  // EOYCD fix
   rb_define_method(cgsl_matrix_complex_const, "set", rb_dirac_refuse_set, -1);
 
   cPauli = rb_define_class_under(module, "Pauli", cgsl_matrix_complex_const);
